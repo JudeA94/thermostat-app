@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>My web page</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Thermostat</title>
   </head>
   <body>
-
-
-
+  <div class="temperature"></div>  
+  <div class="main-container">
+  <form>
+    <button type="button" name="up" value="+" class="button" id="upButton">+</button>
+    <button type="button" name="down" value="-" class="button" id="downButton">-</button>
+    <button type="button" name="psm" value="psm" class="button" id="psmButton">Power Saving Mode</button>
+    <button type="button" name="usage" value="usage" class="button" id="usageButton">Current Usage</button>
+  </form>
+  </div>
   <script type="text/javascript" src="bundle.js"></script>  
   </body>
 </html>
