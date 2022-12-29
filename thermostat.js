@@ -24,6 +24,13 @@ class Thermostat {
 
   setPowerSavingMode() {
     this.psm = !this.psm
+    if(this.temperature > 25 && this.psm === true) {
+      this.temperature = 25
+    }
+  }
+
+  getPSM() {
+    return this.psm
   }
 
   reset() {

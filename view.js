@@ -9,38 +9,47 @@ class View {
     this.usageButtonEl = document.querySelector('#usageButton');
     this.upButtonEl.addEventListener('click', () => {
       thermostat.up();
-      this.displayThermostat();
+      this.updateTemperature();
       console.log(thermostat.getTemperature())
     });
     this.downButtonEl.addEventListener('click', () => {
       thermostat.down();
-      this.displayThermostat();
+      this.updateTemperature();
       console.log(thermostat.getTemperature())
     });
     this.psmButtonEl.addEventListener('click', () => {
       thermostat.setPowerSavingMode();
-      this.displayThermostat();
+      this.updateTemperature();
+      this.updatePSM()
       console.log(thermostat.getTemperature())
     });
     this.usageButtonEl.addEventListener('click', () => {
        thermostat.getUsage();
-       this.displayThermostat();
-       console.log(thermostat.getTemperature())
+       this.updateUsage();
+       console.log(thermostat.getUsage())
     });
+    this.updateTemperature();
   }
 
-  displayThermostat() {
-    const displayTemp = document.createElement('h1')
-    displayTemp.innerText = thermostat.getTemperature();
-    document.querySelector('div.temperature').append(displayTemp);
-  }
-
-  updatTemperature() {
+  updateTemperature() {
     const displayTemp = document.querySelector('h1')
-    displayTemp.textContent = thermostat.getTemperature()
-    this.displayThermostat()
+    displayTemp.innerText = `${thermostat.getTemperature()}\u00B0`
   }
   
+  updatePSM() {
+    const light = document.querySelector('.dot')
+    if(thermostat.getPSM() === true) {
+      light.style.backgroundColor = 'green';
+    } else {
+      light.style.backgroundColor = 'red';
+    }
+  }
+
+  updateUsage() {
+    const displayText = document.querySelector('h1')
+    displayText.innerText = thermostat.getUsage()
+    setTimeout(this.updateTemperature,1500);
+  }
 
 }
 

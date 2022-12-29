@@ -1,3 +1,52 @@
 .button {
   width: 200px;
+  margin: 5px;
+}
+
+#upButton {
+  margin-right: 10px;
+}
+
+#downButton {
+  margin-left: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.main-container {
+  background: rgb(239, 220, 177);
+  border: 3px solid black;
+  border-radius: 20px;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.sub-container {
+  display: flexbox;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+body {
+  zoom: 2.5;
+}
+
+.temperature {
+  font-size: larger;
+  text-align: center;
+  display: inline-block;
+  height: 50px;
+  width: 350px;
+  background-color: rgb(175, 170, 170);
+  border: 3px solid black;
+}
+
+h1 {
+  margin: 0;
 }
